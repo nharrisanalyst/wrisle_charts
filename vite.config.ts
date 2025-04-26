@@ -13,7 +13,11 @@ export default defineConfig({
     libInjectCss(),
     dts({ include: ['lib'] })
   ],
-  
+  test: {
+    globals: true,
+    environment: 'jsdom', // or 'node' for backend-style tests
+    setupFiles: './src/setupTests.ts',
+  },
   build: {
         lib: {
           entry: resolve(__dirname, 'lib/main.ts'),

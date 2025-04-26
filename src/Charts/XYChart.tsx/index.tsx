@@ -54,8 +54,6 @@ const XYChart= <T,>({
     useEffect(()=>void select(gx.current).call(axisBottom(xScale)),[gx,xScale]);
     useEffect(()=> void select(gy.current).call(axisLeft(yScale)),[gy,yScale]);
 
-
-
     return(
        <svg height={height} width={width}>
             <g ref={gx} transform={`translate(0,${height-margin.bottom})`} />

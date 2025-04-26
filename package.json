@@ -21,7 +21,9 @@
     "prepublishOnly": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test-storybook": "test-storybook"
+    "test-storybook": "test-storybook",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
   },
   "config": {
     "commitizen": {
@@ -42,11 +44,13 @@
     "@storybook/react-vite": "^8.6.12",
     "@storybook/test": "^8.6.12",
     "@storybook/test-runner": "^0.22.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/d3": "^7.4.3",
     "@types/node": "^22.14.1",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^4.4.1",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "d3": "^7.9.0",
@@ -61,12 +65,14 @@
     "glob": "^11.0.1",
     "globals": "^16.0.0",
     "husky": "^9.1.7",
+    "jsdom": "^26.1.0",
     "storybook": "^8.6.12",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.26.1",
     "vite": "^6.3.1",
     "vite-plugin-dts": "^4.5.3",
-    "vite-plugin-lib-inject-css": "^2.2.2"
+    "vite-plugin-lib-inject-css": "^2.2.2",
+    "vitest": "^3.1.2"
   },
   "eslintConfig": {
     "extends": [
