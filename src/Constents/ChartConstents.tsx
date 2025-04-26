@@ -1,4 +1,4 @@
-export interface Margin ={
+export interface Margin{
     top:number;
     right:number;
     bottom:number;
