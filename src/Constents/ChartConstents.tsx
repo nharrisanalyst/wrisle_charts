@@ -13,5 +13,5 @@ export const chartMargin:Margin ={
 }
 
 
-export const chartHeight:number = 750;
-export const chartWidth:number = 750;
+export const chartHeight:number = 300;
+export const chartWidth:number = 500;
