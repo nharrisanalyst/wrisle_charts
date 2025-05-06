@@ -21,11 +21,11 @@ type ChartProviderProps<T> ={
     data:T[];
     xAccesor:(d:T) =>number |string| Date,
     yAccesor:(d:T) => number | string |Date,
-    height:number;
-    width:number;
+    height?:number;
+    width?:number;
     children: any;
-    scaleType:'linear';
-    margin:MarginType;
+    scaleType?:'linear';
+    margin?:MarginType;
 }
 
 export type ChartContextType<T> = {
@@ -56,13 +56,13 @@ const ChartProvider = <T,>({
     const xScale: ScaleLinear<number,number>  = useMemo(()=> scaleLinear()
     //@ts-ignore
                                             .domain([0, max(data, (d)=> xAccesor(d))])
-                                            .range([margin.left, width-margin.right]), 
+                                            .range([margin.left, width-margin.right]).nice(), 
                                             [data, xAccesor])
 
     const yScale :ScaleLinear<number,number>  = useMemo(()=> scaleLinear()
     //@ts-ignore
                                             .domain([0, max(data, (d)=> yAccesor(d))])
-                                            .range([height-margin.top, margin.bottom]), 
+                                            .range([height-margin.top, margin.bottom]).nice(), 
                                             [data, yAccesor])
 
 

@@ -45,7 +45,6 @@ const XYChart= <T,>({
     children
 
 }:XYChartProps<T>) =>{
-    console.log(max(data,yAccesor))
    //deminsions
    const gx = useRef<SVGSVGElement|null>(null);
    const gy = useRef<SVGSVGElement|null>(null);
@@ -56,7 +55,7 @@ const XYChart= <T,>({
     useEffect(()=>void select(gx.current).call(axisBottom(xScale).ticks()),[gx,xScale]);
     useEffect(()=> void select(gy.current).call(axisLeft(yScale).ticks()),[gy,yScale]);
 
-    
+
 
     return(
        <svg height={height} width={width}>
