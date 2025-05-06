@@ -28,7 +28,7 @@ type ChartProviderProps<T> ={
     margin:MarginType;
 }
 
-type ChartContextType<T> = {
+export type ChartContextType<T> = {
     data:T[];
     xAccesor:(d:T) =>number |string| Date,
     yAccesor:(d:T) => number | string |Date,
@@ -73,12 +73,16 @@ const ChartProvider = <T,>({
         yAccesor,
         xAccesor,
         xScale,
-        yScale
+        yScale,
+        margin,
+        scaleType:'linear'
     };
 
     return(
         <ChartContext.Provider  value={context} >
-        {children}
+            <svg height={height} width={width}>
+                {children}
+            </svg>
         </ChartContext.Provider>
     );
 }
