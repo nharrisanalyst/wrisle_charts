@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import Xaxis from '../xAxis/Xaxis'
+
 
 const data = [{
     x:1,
@@ -20,11 +20,11 @@ const providerProps = {
 
 
 import ChartProvider from '../../Provider/ChartProvider';
-import Grid from './Grid';
+import xAxis from './xAxis';
 
 const meta = {
-  title: 'Components/Grid',
-  component:  Grid,
+  title: 'Components/xAxis',
+  component:  xAxis,
   parameters: {
     layout: 'centered',
   },
@@ -42,7 +42,7 @@ const meta = {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} satisfies Meta<typeof Grid>;
+} satisfies Meta<typeof xAxis>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

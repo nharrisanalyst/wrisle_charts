@@ -1,5 +1,5 @@
 import {useContext, useMemo} from 'react';
-import {ChartContext, ChartContextType} from '../../Provider/ChartProvider'
+import {ChartContext } from '../../Provider/ChartProvider';
 
 const Grid = () =>{
     const context = useContext(ChartContext);
