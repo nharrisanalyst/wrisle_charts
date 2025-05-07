@@ -14,8 +14,8 @@ const data = [{
 
 const providerProps = {
     data:data,
-    xAccesor:d => d.x,
-    yAccesor:d => d.y,
+    xAccessor:d => d.x,
+    yAccessor:d => d.y,
 }
 
 

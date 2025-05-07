@@ -17,7 +17,7 @@ const xyChartProps ={
             y:5
             }
         ],
-        yAccesor:d=>d.y,
+        yAccessor:d=>d.y,
         xAccessor:d=>d.x,
 }
 

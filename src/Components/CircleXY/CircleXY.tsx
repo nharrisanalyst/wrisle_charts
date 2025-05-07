@@ -19,8 +19,8 @@ const CircleXY =({r=2, strokeWidth=0, fill='grey', stroke=null}) =>{
         data,
         height,
         width,
-        yAccesor,
-        xAccesor,
+        yAccessor,
+        xAccessor,
         xScale,
         yScale,
         margin,
@@ -29,8 +29,8 @@ const CircleXY =({r=2, strokeWidth=0, fill='grey', stroke=null}) =>{
         context.data,
         context.height,
         context.width,
-        context.yAccesor,
-        context.xAccesor,
+        context.yAccessor,
+        context.xAccessor,
         context.xScale,
         context.yScale,
         context.margin,
@@ -40,8 +40,8 @@ const CircleXY =({r=2, strokeWidth=0, fill='grey', stroke=null}) =>{
 
     return (
         <g className='xy-chart-circles'>
-          {data.map((d,i)=> (<circle key={i} cx={xScale(xAccesor(d))} 
-                                    cy={yScale(yAccesor(d))}
+          {data.map((d,i)=> (<circle key={i} cx={xScale(xAccessor(d))} 
+                                    cy={yScale(yAccessor(d))}
                                     fill={fill}
                                      r={r}
                                      strokeWidth={strokeWidth}
