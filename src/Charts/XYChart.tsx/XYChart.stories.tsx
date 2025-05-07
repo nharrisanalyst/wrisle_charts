@@ -47,7 +47,7 @@ export const Primary: Story = {
         y:5
         }
     ],
-    yAccesor:d=>d.y,
+    yAccessor:d=>d.y,
     xAccessor:d=>d.x,
    }
 };
@@ -68,7 +68,7 @@ export const WithText: Story ={
         y:5
         }
     ],
-    yAccesor:d=>d.y,
+    yAccessor:d=>d.y,
     xAccessor:d=>d.x,
     title:"Recent Data Points"
    }

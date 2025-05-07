@@ -10,7 +10,7 @@ type MarginType ={
  right:number;
 }
 
-const defaultMargin = {
+export const defaultMargin = {
     left:25,
     top:25,
     bottom:25,
@@ -19,8 +19,8 @@ const defaultMargin = {
 
 type ChartProviderProps<T> ={
     data:T[];
-    xAccesor:(d:T) =>number |string| Date,
-    yAccesor:(d:T) => number | string |Date,
+    xAccessor:(d:T) =>number |string| Date,
+    yAccessor:(d:T) => number | string |Date,
     height?:number;
     width?:number;
     children: any;
@@ -30,8 +30,8 @@ type ChartProviderProps<T> ={
 
 export type ChartContextType<T> = {
     data:T[];
-    xAccesor:(d:T) =>number |string| Date,
-    yAccesor:(d:T) => number | string |Date,
+    xAccessor:(d:T) =>number |string| Date,
+    yAccessor:(d:T) => number | string |Date,
     height:number;
     width:number;
     scaleType:'linear';
@@ -47,31 +47,30 @@ const ChartProvider = <T,>({
                     data, 
                     height=300, 
                     width=500, 
-                    xAccesor, 
-                    yAccesor, 
+                    xAccessor, 
+                    yAccessor, 
                     scaleType='linear',
                     margin = defaultMargin,   
                     children}: ChartProviderProps<T> ) =>{
-
     const xScale: ScaleLinear<number,number>  = useMemo(()=> scaleLinear()
     //@ts-ignore
-                                            .domain([0, max(data, (d)=> xAccesor(d))])
+                                            .domain([0, max(data, (d)=> xAccessor(d))])
                                             .range([margin.left, width-margin.right]).nice(), 
-                                            [data, xAccesor])
+                                            [data, xAccessor])
 
     const yScale :ScaleLinear<number,number>  = useMemo(()=> scaleLinear()
     //@ts-ignore
-                                            .domain([0, max(data, (d)=> yAccesor(d))])
+                                            .domain([0, max(data, (d)=> yAccessor(d))])
                                             .range([height-margin.top, margin.bottom]).nice(), 
-                                            [data, yAccesor])
+                                            [data, yAccessor])
 
 
     const context: ChartContextType<T> ={
         data,
         height,
         width,
-        yAccesor,
-        xAccesor,
+        yAccessor,
+        xAccessor,
         xScale,
         yScale,
         margin,
