@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import Xaxis from '../xAxis/Xaxis'
-import LeftAxis from '../LeftAxis/LeftAxis';
-import CircleXY from '../CircleXY/CircleXY';
+
 
 const data = [{
     x:1,
@@ -22,11 +20,11 @@ const providerProps = {
 
 
 import ChartProvider from '../../Provider/ChartProvider';
-import Grid from './Grid';
+import CircleXY from './CircleXY';
 
 const meta = {
-  title: 'Components/Grid',
-  component:  Grid,
+  title: 'Components/CircleXY',
+  component: CircleXY,
   parameters: {
     layout: 'centered',
   },
@@ -35,11 +33,7 @@ const meta = {
       <div style={{ width: '1200px' }}>
         {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
         <ChartProvider {...providerProps} >
-        
         <Story />
-        <Xaxis />
-        <LeftAxis />
-        <CircleXY r={5} />
         </ChartProvider>
       </div>
     ),
@@ -48,13 +42,13 @@ const meta = {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} satisfies Meta<typeof Grid>;
+} satisfies Meta<typeof CircleXY>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    
+     r:6
     }
 }
