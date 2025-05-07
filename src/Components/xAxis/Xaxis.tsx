@@ -13,23 +13,13 @@ const xAxis = () =>{
     const [
         data,
         height,
-        width,
-        yAccesor,
-        xAccesor,
         xScale,
-        yScale,
         margin,
-        scaleType
     ] = [
         context.data,
         context.height,
-        context.width,
-        context.yAccesor,
-        context.xAccesor,
         context.xScale,
-        context.yScale,
         context.margin,
-        context.scaleType
     ]
 
     useEffect(()=>{
