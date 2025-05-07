@@ -1,12 +1,12 @@
 import { useContext, useEffect, useRef} from 'react';
 import {ChartContext } from '../../Provider/ChartProvider';
-import {axisBottom} from 'd3-axis';
+import {axisLeft} from 'd3-axis';
 import {select} from 'd3-selection';
 
 
-const xAxis = () =>{
+const LeftAxis = () =>{
     const context = useContext(ChartContext);
-    const gx = useRef<HTMLElement | null>(null);
+    const gy = useRef<HTMLElement | null>(null);
 
     if(!context) {throw new Error('Grid can only be used with a provided Cotext')}
 
@@ -33,14 +33,14 @@ const xAxis = () =>{
     ]
 
     useEffect(()=>{
-      select(gx.current).call(axisBottom(xScale))
-    }, [data, xScale])
+      select(gy.current).call(axisLeft(yScale))
+    }, [data, yScale])
 
     return(
         <>
-            <g ref={gx} transform={`translate(0, ${height-margin.bottom})`} />
+            <g ref={gy} transform={`translate(${margin.left}, 0)`} />
         </>
     )
 }
 
-export default xAxis;
+export default LeftAxis;
