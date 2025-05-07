@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import Xaxis from '../xAxis/Xaxis'
+import LeftAxis from '../LeftAxis/LeftAxis';
 
 const data = [{
     x:1,
@@ -34,6 +35,8 @@ const meta = {
         {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
         <ChartProvider {...providerProps} >
         <Story />
+        <Xaxis />
+        <LeftAxis />
         </ChartProvider>
       </div>
     ),
